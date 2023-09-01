@@ -1,6 +1,8 @@
 import { styled } from "styled-components/native";
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  padding: 24px;
+`;
 
 export const WrapperIndicator = styled.View`
   flex-direction: row;
@@ -13,6 +15,7 @@ export const WrapperIndicator = styled.View`
 export const Image = styled.Image<{ width: number }>`
   width: ${({ width }) => width}px;
   height: 200px;
+  border-radius: 10px;
 `;
 
 export const Dot = styled.View<{ active?: boolean }>`

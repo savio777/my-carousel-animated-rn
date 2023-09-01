@@ -20,7 +20,7 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
 
   useEffect(() => {
     let interval = setInterval(() => {
-      if (activeIndex === data.length - 1) {
+      if (activeIndex >= data.length - 1) {
         flatlistRef?.current?.scrollToIndex({
           index: 0,
           animation: true,
@@ -68,6 +68,8 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
         horizontal
         pagingEnabled
         // todo: fazer flatlist não pegar todo o height
+        // resolver: scrollToIndex passando do limite do tamanho da lista
+        // resolver: index com numero quebrado
       />
 
       <WrapperIndicator>
