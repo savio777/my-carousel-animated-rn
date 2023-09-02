@@ -18,6 +18,8 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
   const { width } = useWindowDimensions();
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const WIDTH_IMAGE = width * 0.885;
+
   useEffect(() => {
     let interval = setInterval(() => {
       if (activeIndex >= data.length - 1) {
@@ -37,8 +39,8 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
   });
 
   const getItemLayout = (_, index: number) => ({
-    length: width,
-    offset: width * index,
+    length: WIDTH_IMAGE,
+    offset: WIDTH_IMAGE * index,
     index: index,
   });
 
@@ -48,12 +50,12 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
     console.log({ scrollPosition });
     // Get the index of current active item
 
-    const index = scrollPosition / width;
+    const index = scrollPosition / WIDTH_IMAGE;
 
     console.log({ index });
     // Update the index
 
-    setActiveIndex(index);
+    setActiveIndex(Math.round(index));
   };
 
   return (
@@ -64,12 +66,11 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
         data={data}
         getItemLayout={getItemLayout}
         onScroll={handleScroll}
-        renderItem={({ item }) => <Image width={width} source={item.image} />}
+        renderItem={({ item }) => (
+          <Image width={WIDTH_IMAGE} source={item.image} />
+        )}
         horizontal
         pagingEnabled
-        // todo: fazer flatlist não pegar todo o height
-        // resolver: scrollToIndex passando do limite do tamanho da lista
-        // resolver: index com numero quebrado
       />
 
       <WrapperIndicator>
