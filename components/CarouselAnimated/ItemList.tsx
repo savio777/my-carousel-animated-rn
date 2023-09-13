@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Animated, {
-  useAnimatedReaction,
   useAnimatedStyle,
   withTiming,
 } from "react-native-reanimated";
@@ -18,7 +17,6 @@ interface ItemListProps {
 
 const ItemList: React.FC<ItemListProps> = React.memo(
   ({ index, activeIndex, width, image }) => {
-    const [isActive, setIsActive] = useState(false);
 
     const rStyle = useAnimatedStyle(() => {
       const isVisible = activeIndex.value === index;
@@ -36,8 +34,8 @@ const ItemList: React.FC<ItemListProps> = React.memo(
     return (
       <Animated.View style={[{ width, marginRight: 8 }, rStyle]}>
         <Image width={width} source={image}>
-          <Title active={isActive}>{textMock.title}</Title>
-          <Description active={isActive}>{textMock.subtitle}</Description>
+          <Title>{textMock.title}</Title>
+          <Description>{textMock.subtitle}</Description>
         </Image>
       </Animated.View>
     );
