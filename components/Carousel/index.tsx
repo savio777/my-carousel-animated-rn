@@ -47,14 +47,11 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
   const handleScroll = (event) => {
     // Get the scroll position
     const scrollPosition = event.nativeEvent.contentOffset.x;
-    console.log({ scrollPosition });
     // Get the index of current active item
 
     const index = scrollPosition / WIDTH_IMAGE;
 
-    console.log({ index });
     // Update the index
-
     setActiveIndex(Math.round(index));
   };
 
