@@ -17,7 +17,7 @@ const CarouselAnimated: React.FC<ICarouselProps> = ({ data }) => {
   const { width } = useWindowDimensions();
   const activeIndex = useSharedValue(0);
 
-  const WIDTH_IMAGE = width * 0.6;
+  const WIDTH_IMAGE = width * 0.7;
 
   const getItemLayout = (_, index: number) => ({
     length: WIDTH_IMAGE,

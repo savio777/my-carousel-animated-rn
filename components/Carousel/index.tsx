@@ -18,7 +18,7 @@ const Carousel: React.FC<ICarouselProps> = ({ data }) => {
   const { width } = useWindowDimensions();
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const WIDTH_IMAGE = width * 0.885;
+  const WIDTH_IMAGE = width - 48;
 
   useEffect(() => {
     let interval = setInterval(() => {
