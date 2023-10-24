@@ -15,11 +15,11 @@ export const Container = styled.View`
 export default function App() {
   return (
     <Container>
+      <CarouselVerticalAnimated data={mock} />
+
       <Carousel data={mock} />
 
       <CarouselAnimated data={mock} />
-
-      <CarouselVerticalAnimated data={mock} />
 
       <StatusBar style="light" />
     </Container>
