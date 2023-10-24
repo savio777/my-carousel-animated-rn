@@ -1,4 +1,4 @@
-import { ImageBackgroundProps } from "react-native";
+import { ImageBackgroundProps, StyleSheet } from "react-native";
 import { styled } from "styled-components/native";
 
 export const Container = styled.View`
@@ -36,3 +36,26 @@ export const Image = styled.ImageBackground.attrs({
   width: 100%;
   height: 120px;
 `;
+
+export const stylesHeader = StyleSheet.create({
+  content: {
+    flex: 1,
+    width: "100%",
+    borderRadius: 10,
+    marginHorizontal: 24,
+    backgroundColor: "black",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  header: {
+    alignItems: "center",
+    left: 0,
+    right: 0,
+  },
+  title: {
+    color: "#ffff",
+    fontWeight: "bold",
+    height: 24,
+    marginVertical: 24,
+  },
+});

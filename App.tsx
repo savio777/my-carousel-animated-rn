@@ -7,14 +7,31 @@ import CarouselAnimated from "./components/CarouselAnimated";
 import CarouselVerticalAnimated from "./components/CarouselVerticalAnimated";
 import { mock } from "./mock";
 
-export const Container = styled.View`
+export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #333333;
+`;
+
+export const Header = styled.View`
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 10px;
+`;
+
+export const Title = styled.Text`
+  color: white;
+  font-weight: bold;
 `;
 
 export default function App() {
   return (
     <Container>
+      <Header>
+        <Title>title header :)</Title>
+      </Header>
+
       <CarouselVerticalAnimated data={mock} />
 
       <Carousel data={mock} />
