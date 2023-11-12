@@ -22,11 +22,12 @@ const CarouselVerticalAnimated: React.FC<ICarouselProps> = ({ data }) => {
 
   return (
     <Container>
-      <HeaderAnimated value={scrollOffsetY}  />
+      <HeaderAnimated value={scrollOffsetY} />
 
       <FlatList
         keyExtractor={(item) => item.id}
         data={data}
+        contentContainerStyle={{ paddingTop: 200 }}
         onViewableItemsChanged={({ viewableItems: value }) => {
           viewableItems.value = value;
         }}

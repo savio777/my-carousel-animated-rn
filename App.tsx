@@ -28,10 +28,6 @@ export const Title = styled.Text`
 export default function App() {
   return (
     <Container>
-      <Header>
-        <Title>title header :)</Title>
-      </Header>
-
       <CarouselVerticalAnimated data={mock} />
 
       <Carousel data={mock} />

@@ -39,7 +39,6 @@ export const Image = styled.ImageBackground.attrs({
 
 export const stylesHeader = StyleSheet.create({
   content: {
-    flex: 1,
     width: "100%",
     borderRadius: 10,
     marginHorizontal: 24,
@@ -48,14 +47,19 @@ export const stylesHeader = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
+    position: "absolute",
     alignItems: "center",
     left: 0,
     right: 0,
+    marginBottom: 6,
+    borderRadius: 10,
+    zIndex: 111,
+    marginHorizontal: 24,
   },
   title: {
     color: "#ffff",
     fontWeight: "bold",
     height: 24,
-    marginVertical: 24,
+    marginTop: 16,
   },
 });
